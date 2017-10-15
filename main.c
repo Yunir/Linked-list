@@ -4,8 +4,8 @@
 
 int main() {
     struct node *head = NULL;
-    int sum;
     printf("Write number of integers\nTo confirm sequence - write 0 at the end:\n");
     readNumbers(&head);
     printList(head);
+    printf("The summary of linked list elements: %d\n", sumOfList(head));
 }

@@ -19,9 +19,19 @@ void pushNode(int new_data, struct node **head_ref) {
 
 void printList(struct node *head) {
 	struct node *temp = head;
-    while(temp != NULL)
-    {
+    while(temp != NULL) {
         printf("%d  ", temp->value);
         temp = temp->next;
     }
+	printf("\n");
+}
+
+int sumOfList(struct node *head) {
+	int result = 0;
+	struct node *temp = head;
+	while (temp != NULL) {
+		result += temp->value;
+		temp = temp->next;
+	}
+	return result;
 }
