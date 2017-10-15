@@ -8,4 +8,7 @@ int main() {
     readNumbers(&head);
     printList(head);
     printf("The summary of linked list elements: %d\n", sumOfList(head));
+    printf("What value of index in linked list you want to see?\nWrite the index of linked list: ");
+    findNode(head);
+    freeMemory(head);
 }

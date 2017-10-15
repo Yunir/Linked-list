@@ -6,8 +6,10 @@
         struct node* next;
     };
 
-    void pushNode(int new_data, struct node **head_ref);
-    void printList(struct node *head);
+    void pushNode(int, struct node**);
+    void printList(struct node*);
     struct node readNumbers(struct node**);
-    int sumOfList(struct node *head);
+    int sumOfList(struct node*);
+    void findNode(struct node*);
+    void freeMemory(struct node*);
 #endif

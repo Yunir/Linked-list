@@ -35,3 +35,31 @@ int sumOfList(struct node *head) {
 	}
 	return result;
 }
+
+void findNode(struct node *head) {
+	int counter;
+	struct node *temp = head;
+	if(scanf("%d", &counter) == 1) {
+		while (temp != NULL) {
+			if(counter == 0) {
+				printf("The value of that index: %d\n", temp->value);
+				break;
+			}
+			temp = temp->next;
+			--counter;
+		}
+		if(counter < 0 || temp == NULL) {
+			printf("Sorry, but linked list don't have such index\n");
+		}
+	} else {
+		printf("You write not an integer number\n");
+	}
+}
+
+void freeMemory(struct node *head) {
+	struct node *temp = head;
+	while (temp != NULL) {
+		free(temp);
+		temp = temp->next;
+	}
+}
