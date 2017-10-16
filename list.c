@@ -70,3 +70,21 @@ void printNodeWithSpace(int value){
 void printNodeWithNewLine(int value){
     printf("%d\n",value);
 }
+
+struct node* map(struct node *head, int (*f)(int)){
+    struct node *new_head = NULL;
+	struct node *temp = head;
+	while (temp!=NULL){
+        pushNode(f(temp->value), &new_head);
+        temp = temp->next;
+    }
+    return new_head;
+}
+
+int squareIt(int element){
+    return element*element;
+}
+
+int cubeIt(int element){
+    return element*element*element;
+}

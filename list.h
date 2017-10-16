@@ -14,4 +14,7 @@
     void foreach(struct node*, void (*f)(int));
     void printNodeWithSpace(int value);
     void printNodeWithNewLine(int value);
+    struct node* map(struct node*, int (*f)(int));
+    int squareIt(int);
+    int cubeIt(int);
 #endif

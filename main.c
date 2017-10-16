@@ -11,5 +11,7 @@ int main() {
     printf("The summary of linked list elements: %d\n", sumOfList(head));
     printf("What value of index in linked list you want to see?\nWrite the index of linked list: ");
     findNode(head);
+    foreach(map(head, squareIt), *printNodeWithSpace);
+    printf("\n");
     freeMemory(head);
 }
