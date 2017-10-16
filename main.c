@@ -3,6 +3,8 @@
 #include "list.h"
 
 int main() {
+    int minimalEl = 99999;
+    int maximalEl = -1;
     struct node *head = NULL;
     printf("Write number of integers\nTo confirm sequence - write 0 at the end:\n");
     readNumbers(&head);
@@ -13,5 +15,8 @@ int main() {
     findNode(head);
     foreach(map(head, squareIt), *printNodeWithSpace);
     printf("\n");
+    minimalEl = foldl(head, *min, minimalEl);
+    maximalEl = foldl(head, *max, maximalEl);
+    printf("The sum of the minimal and maximal element: %d + %d = %d\n", minimalEl, maximalEl, minimalEl+maximalEl);
     freeMemory(head);
 }

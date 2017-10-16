@@ -88,3 +88,26 @@ int squareIt(int element){
 int cubeIt(int element){
     return element*element*element;
 }
+
+int foldl(struct node *head, int (*f)(int, int), int buf) {
+	struct node *temp = head;
+    while (temp != NULL) {
+        buf = f(buf, temp->value);
+        temp = temp->next;
+    }
+    return buf;
+}
+
+int max(int first,int second){
+    if(first>second)
+        return first;
+    else
+        return second;
+}
+
+int min(int first,int second){
+    if(first<second)
+        return first;
+    else
+        return second;
+}

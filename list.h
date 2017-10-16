@@ -17,4 +17,7 @@
     struct node* map(struct node*, int (*f)(int));
     int squareIt(int);
     int cubeIt(int);
+    int foldl(struct node*, int (*f)(int, int), int);
+    int max(int,int);
+    int min(int,int);
 #endif
