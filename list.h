@@ -7,9 +7,11 @@
     };
 
     void pushNode(int, struct node**);
-    void printList(struct node*);
     struct node readNumbers(struct node**);
     int sumOfList(struct node*);
     void findNode(struct node*);
     void freeMemory(struct node*);
+    void foreach(struct node*, void (*f)(int));
+    void printNodeWithSpace(int value);
+    void printNodeWithNewLine(int value);
 #endif

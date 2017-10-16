@@ -17,15 +17,6 @@ void pushNode(int new_data, struct node **head_ref) {
     (*head_ref) = new_node;
 }
 
-void printList(struct node *head) {
-	struct node *temp = head;
-    while(temp != NULL) {
-        printf("%d  ", temp->value);
-        temp = temp->next;
-    }
-	printf("\n");
-}
-
 int sumOfList(struct node *head) {
 	int result = 0;
 	struct node *temp = head;
@@ -62,4 +53,20 @@ void freeMemory(struct node *head) {
 		free(temp);
 		temp = temp->next;
 	}
+}
+
+void foreach(struct node *head, void (*f)(int)){
+	struct node *temp = head;
+	while (temp != NULL) {
+		f(temp->value);
+		temp = temp->next;
+	}
+}
+
+void printNodeWithSpace(int value){
+    printf("%d ",value);
+}
+
+void printNodeWithNewLine(int value){
+    printf("%d\n",value);
 }
