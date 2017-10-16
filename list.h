@@ -20,4 +20,5 @@
     int foldl(struct node*, int (*f)(int, int), int);
     int max(int,int);
     int min(int,int);
+    void map_mut(struct node*,int (*f)(int));
 #endif

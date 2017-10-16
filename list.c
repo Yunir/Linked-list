@@ -19,27 +19,25 @@ void pushNode(int new_data, struct node **head_ref) {
 
 int sumOfList(struct node *head) {
 	int result = 0;
-	struct node *temp = head;
-	while (temp != NULL) {
-		result += temp->value;
-		temp = temp->next;
+	while (head != NULL) {
+		result += head->value;
+		head = head->next;
 	}
 	return result;
 }
 
 void findNode(struct node *head) {
 	int counter;
-	struct node *temp = head;
 	if(scanf("%d", &counter) == 1) {
-		while (temp != NULL) {
+		while (head != NULL) {
 			if(counter == 0) {
-				printf("The value of that index: %d\n", temp->value);
+				printf("The value of that index: %d\n", head->value);
 				break;
 			}
-			temp = temp->next;
+			head = head->next;
 			--counter;
 		}
-		if(counter < 0 || temp == NULL) {
+		if(counter < 0 || head == NULL) {
 			printf("Sorry, but linked list don't have such index\n");
 		}
 	} else {
@@ -48,18 +46,16 @@ void findNode(struct node *head) {
 }
 
 void freeMemory(struct node *head) {
-	struct node *temp = head;
-	while (temp != NULL) {
-		free(temp);
-		temp = temp->next;
+	while (head != NULL) {
+		free(head);
+		head = head->next;
 	}
 }
 
 void foreach(struct node *head, void (*f)(int)){
-	struct node *temp = head;
-	while (temp != NULL) {
-		f(temp->value);
-		temp = temp->next;
+	while (head != NULL) {
+		f(head->value);
+		head = head->next;
 	}
 }
 
@@ -73,10 +69,9 @@ void printNodeWithNewLine(int value){
 
 struct node* map(struct node *head, int (*f)(int)){
     struct node *new_head = NULL;
-	struct node *temp = head;
-	while (temp!=NULL){
-        pushNode(f(temp->value), &new_head);
-        temp = temp->next;
+	while (head!=NULL){
+        pushNode(f(head->value), &new_head);
+        head = head->next;
     }
     return new_head;
 }
@@ -90,10 +85,9 @@ int cubeIt(int element){
 }
 
 int foldl(struct node *head, int (*f)(int, int), int buf) {
-	struct node *temp = head;
-    while (temp != NULL) {
-        buf = f(buf, temp->value);
-        temp = temp->next;
+    while (head != NULL) {
+        buf = f(buf, head->value);
+        head = head->next;
     }
     return buf;
 }
@@ -110,4 +104,11 @@ int min(int first,int second){
         return first;
     else
         return second;
+}
+
+void map_mut(struct node *head,int (*f)(int)){
+    while (head != NULL){
+        head->value = f(head->value);
+        head = head->next;
+    }
 }

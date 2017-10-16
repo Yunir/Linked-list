@@ -18,5 +18,8 @@ int main() {
     minimalEl = foldl(head, *min, minimalEl);
     maximalEl = foldl(head, *max, maximalEl);
     printf("The sum of the minimal and maximal element: %d + %d = %d\n", minimalEl, maximalEl, minimalEl+maximalEl);
+    map_mut(head, squareIt);
+    foreach(head, *printNodeWithSpace);
+    printf("\n");
     freeMemory(head);
 }
