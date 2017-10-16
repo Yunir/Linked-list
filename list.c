@@ -112,3 +112,16 @@ void map_mut(struct node *head,int (*f)(int)){
         head = head->next;
     }
 }
+
+struct node* iterate(int s, int size, int (*f)(int)){
+    struct node* head = NULL;
+    for(int i = 0; i < size; ++i){
+        pushNode(s, &head);
+		s = f(s);
+    }
+    return head;
+}
+
+int mulTo2(int element){
+    return element*2;
+}

@@ -21,4 +21,6 @@
     int max(int,int);
     int min(int,int);
     void map_mut(struct node*,int (*f)(int));
+    struct node* iterate(int, int, int (*f)(int));
+    int mulTo2(int);
 #endif

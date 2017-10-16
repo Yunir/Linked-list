@@ -21,5 +21,7 @@ int main() {
     map_mut(head, squareIt);
     foreach(head, *printNodeWithSpace);
     printf("\n");
+    foreach((iterate(1, 5, mulTo2)), *printNodeWithSpace);
+    printf("\n");
     freeMemory(head);
 }
