@@ -15,4 +15,4 @@ file.o: file.c
 	gcc $(FLAGS) file.o file.c
 
 clean:
-	rm -f main.o list.o file.o main linkedList
+	rm -f *.o main linkedList

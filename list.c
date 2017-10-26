@@ -15,22 +15,11 @@ void pushNode(int new_data, struct node **head_ref) {
     (*head_ref) = new_node;
 }
 
-// via foldl - Complete
-/*int sumOfList(struct node *head) {
-	int result = 0;
-	while (head != NULL) {
-		result += head->value;
-		head = head->next;
-	}
-	return result;
-}*/
 int sumOfList(struct node *head) {
 	int result = 0;
 	return foldl(head, *sumOfTwo, result);
 }
 
-// returns void? - Complete
-// UNPURE - Complete
 bool findNode(struct node *head) {
 	int counter;
 	if(scanf("%d", &counter) == 1) {

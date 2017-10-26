@@ -1,6 +1,5 @@
 #include "list.h"
 #include "file.h"
-// includes in file.h - Complete
 #define items_of_data 1
 #define successful_query 1
 
@@ -9,7 +8,6 @@ bool write(struct node *head, char *name) {
     FILE *file = fopen(name, "w");
     if(!file) return false;
     while(head != NULL) {
-        // MAGIC WTF - Complete
         if(fwrite(&(head->value), sizeof(int), items_of_data, file) != successful_query) {
             fclose(file);
             return false;
