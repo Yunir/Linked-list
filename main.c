@@ -18,7 +18,11 @@ int main() {
     printf("\n");
     printf("The summary of linked list elements: %d\n\n", sumOfList(head));
     printf("What value of index in linked list you want to see?\nWrite the index of linked list: ");
-    findNode(head);
+    if (findNode(head)) {
+        printf("We find that index!");
+    } else {
+        printf("Something goes wrong");
+    }
     foreach(map(head, squareIt), *printNodeWithSpace);
     printf("\n");
     minimalEl = foldl(head, *min, minimalEl);

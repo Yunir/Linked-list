@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <malloc.h>
+#include <stdbool.h>
+
 #ifndef LIST_H
     #define LIST_H
 
@@ -9,7 +13,7 @@
     void pushNode(int, struct node**);
     struct node readNumbers(struct node**);
     int sumOfList(struct node*);
-    void findNode(struct node*);
+    bool findNode(struct node*);
     void freeMemory(struct node*);
     void foreach(struct node*, void (*f)(int));
     void printNodeWithSpace(int value);
@@ -23,4 +27,5 @@
     void map_mut(struct node*,int (*f)(int));
     struct node* iterate(int, int, int (*f)(int));
     int mulTo2(int);
+    int sumOfTwo (int a, int b);
 #endif

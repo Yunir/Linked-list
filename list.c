@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <malloc.h>
 #include "list.h"
 
 struct node readNumbers(struct node **head_ref) {
@@ -17,31 +15,37 @@ void pushNode(int new_data, struct node **head_ref) {
     (*head_ref) = new_node;
 }
 
-int sumOfList(struct node *head) {
+// via foldl - Complete
+/*int sumOfList(struct node *head) {
 	int result = 0;
 	while (head != NULL) {
 		result += head->value;
 		head = head->next;
 	}
 	return result;
+}*/
+int sumOfList(struct node *head) {
+	int result = 0;
+	return foldl(head, *sumOfTwo, result);
 }
 
-void findNode(struct node *head) {
+// returns void? - Complete
+// UNPURE - Complete
+bool findNode(struct node *head) {
 	int counter;
 	if(scanf("%d", &counter) == 1) {
 		while (head != NULL) {
 			if(counter == 0) {
-				printf("The value of that index: %d\n", head->value);
-				break;
+				return true;
 			}
 			head = head->next;
 			--counter;
 		}
 		if(counter < 0 || head == NULL) {
-			printf("Sorry, but linked list don't have such index\n");
+			return false;
 		}
 	} else {
-		printf("You write not an integer number\n");
+		return false;
 	}
 }
 
@@ -124,4 +128,8 @@ struct node* iterate(int s, int size, int (*f)(int)){
 
 int mulTo2(int element){
     return element*2;
+}
+
+int sumOfTwo (int a, int b) {
+	return a+b;
 }

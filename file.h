@@ -1,3 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+
 #ifndef FILE_H
     #define FILE_H
 
